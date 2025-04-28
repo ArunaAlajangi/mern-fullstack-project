@@ -8,6 +8,7 @@ const DoctorAppointment = () => {
   const { calculateAge, slotDateFormat, currency } = useContext(AppContext);
 
   useEffect(() => {
+    console.log("DoctorAppointment useEffect triggered with token:", dToken);
     if (dToken) {
       getAppointments();
     }
@@ -20,18 +21,18 @@ const DoctorAppointment = () => {
       <div className="bg-gray-50 rounded-xl shadow p-4">
         {/* Header */}
         <div className="grid grid-cols-7 text-center font-semibold py-2 border-b border-gray-300">
-          <div>#</div>
-          <div>Patient</div>
-          <div>Payment</div>
-          <div>Age</div>
-          <div>Date & Time</div>
-          <div>Fees</div>
-          <div>Action</div>
+          <div className="col-span-1">#</div>
+          <div className="col-span-1">Patient</div>
+          <div className="col-span-1">Payment</div>
+          <div className="col-span-1">Age</div>
+          <div className="col-span-1">Date & Time</div>
+          <div className="col-span-1">Fees</div>
+          <div className="col-span-1">Action</div>
         </div>
 
         {/* Appointments */}
         <div className="divide-y divide-gray-200">
-          {appointments.slice().reverse().map((item, index) => (
+          {appointments.reverse().map((item, index) => (
             <div
               key={index}
               className="grid grid-cols-7 items-center text-center py-3 font-medium hover:bg-white transition"

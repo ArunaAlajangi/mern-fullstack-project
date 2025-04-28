@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Login from './pages/Login';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AdminContext } from './context/AdminContext';
 import Navbar from './components/Navbar';
@@ -11,7 +11,7 @@ import AllAppointments from './pages/Admin/AllAppointments';
 import DoctorList from './pages/Admin/DoctorsList';
 import AddDoctors from './pages/Admin/AddDoctor';
 import { DoctorContext } from './context/DoctorContext';
-import DoctorAppointment from './pages/Doctor/DoctorAppointment';
+import DoctorAppointments from './pages/Doctor/DoctorAppointment';
 import DoctorDashboards from './pages/Doctor/DoctorDashboard';
 import DoctorProfiles from './pages/Doctor/DoctorProfile';
 
@@ -36,7 +36,7 @@ const App = () => {
 
             {/* Doctor Routes */}
             <Route path="/doctor-dashboard" element={<DoctorDashboards />} />
-            <Route path="/doctor-appointments" element={<DoctorAppointment />} />
+            <Route path="/doctor-appointments" element={<DoctorAppointments />} />
             <Route path="/doctor-profile" element={<DoctorProfiles />} />
           </Routes>
         </div>
